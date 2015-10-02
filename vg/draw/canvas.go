@@ -595,16 +595,15 @@ func (c *Canvas) FillText(sty TextStyle, x, y vg.Length, xalign, yalign float64,
 
 	cos := vg.Length(math.Cos(sty.Rotation))
 	sin := vg.Length(math.Sin(sty.Rotation))
-	yprime := y*cos - x*sin
-	xprime := y*sin + x*cos
+	x, y = y*sin+x*cos, y*cos-x*sin
 
 	nl := textNLines(txt)
 	ht := sty.Height(txt)
-	yprime += ht*vg.Length(yalign) - sty.Font.Extents().Ascent
+	y += ht*vg.Length(yalign) - sty.Font.Extents().Ascent
 	for i, line := range strings.Split(txt, "\n") {
 		xoffs := vg.Length(xalign) * sty.Font.Width(line)
 		n := vg.Length(nl - i)
-		c.FillString(sty.Font, xprime+xoffs, yprime+n*sty.Font.Size, line)
+		c.FillString(sty.Font, x+xoffs, y+n*sty.Font.Size, line)
 	}
 
 	c.Pop()

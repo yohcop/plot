@@ -280,7 +280,7 @@ func (a *verticalAxis) size() (w vg.Length) {
 // draw draws the axis along the left side of a draw.Canvas.
 func (a *verticalAxis) draw(c draw.Canvas) {
 	x := c.Min.X
-	a.Label.TextStyle.Rotation = math.Pi / 2.
+	a.Label.TextStyle.Rotation += math.Pi / 2.
 	if a.Label.Text != "" {
 		x += a.Label.Height(a.Label.Text)
 		c.FillText(a.Label.TextStyle, x, c.Center().Y, -0.5, 0, a.Label.Text)
