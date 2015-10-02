@@ -80,6 +80,8 @@ func TestLegendAlignment(t *testing.T) {
 			},
 		},
 		&recorder.SetColor{},
+		&recorder.Push{},
+		&recorder.Rotate{Angle: 0},
 		&recorder.FillString{
 			Font:   string("Times-Roman"),
 			Size:   10.822510822510822,
@@ -87,6 +89,7 @@ func TestLegendAlignment(t *testing.T) {
 			Y:      30.82251082251082,
 			String: "A",
 		},
+		&recorder.Pop{},
 		&recorder.SetColor{
 			Color: color.Gray16{},
 		},
@@ -116,6 +119,8 @@ func TestLegendAlignment(t *testing.T) {
 			},
 		},
 		&recorder.SetColor{},
+		&recorder.Push{},
+		&recorder.Rotate{Angle: 0},
 		&recorder.FillString{
 			Font:   string("Times-Roman"),
 			Size:   10.822510822510822,
@@ -123,6 +128,7 @@ func TestLegendAlignment(t *testing.T) {
 			Y:      20.82251082251082,
 			String: "B",
 		},
+		&recorder.Pop{},
 		&recorder.SetColor{
 			Color: color.Gray16{
 				Y: uint16(0),
@@ -154,6 +160,8 @@ func TestLegendAlignment(t *testing.T) {
 			},
 		},
 		&recorder.SetColor{},
+		&recorder.Push{},
+		&recorder.Rotate{Angle: 0},
 		&recorder.FillString{
 			Font:   string("Times-Roman"),
 			Size:   10.822510822510822,
@@ -161,6 +169,7 @@ func TestLegendAlignment(t *testing.T) {
 			Y:      10.822510822510822,
 			String: "C",
 		},
+		&recorder.Pop{},
 		&recorder.SetColor{
 			Color: color.Gray16{},
 		},
@@ -190,6 +199,8 @@ func TestLegendAlignment(t *testing.T) {
 			},
 		},
 		&recorder.SetColor{},
+		&recorder.Push{},
+		&recorder.Rotate{Angle: 0},
 		&recorder.FillString{
 			Font:   string("Times-Roman"),
 			Size:   10.822510822510822,
@@ -197,6 +208,7 @@ func TestLegendAlignment(t *testing.T) {
 			Y:      0.8225108225108215,
 			String: "D",
 		},
+		&recorder.Pop{},
 	}
 
 	if !reflect.DeepEqual(got, want) {
