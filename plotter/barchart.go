@@ -41,7 +41,7 @@ type BarChart struct {
 
 	// Horizontal dictates whether the bars should be in the vertical
 	// (default) or horizontal direction. If Horizontal is true, all
-	// X location and distances referred to here will actually be Y
+	// X locations and distances referred to here will actually be Y
 	// locations and distances.
 	Horizontal bool
 
