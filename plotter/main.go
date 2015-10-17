@@ -262,10 +262,13 @@ func Example_groupedHorizontalBoxPlots() *plot.Plot {
 
 	w := vg.Points(20)
 	for y := 0.0; y < 3.0; y++ {
-		b0 := must(plotter.MakeHorizBoxPlot(w, y, uniform)).(plotter.HorizBoxPlot)
+		b0 := must(plotter.NewBoxPlot(w, y, uniform)).(*plotter.BoxPlot)
+		b0.Horizontal = true
 		b0.Offset = -w - vg.Points(3)
-		b1 := must(plotter.MakeHorizBoxPlot(w, y, normal)).(plotter.HorizBoxPlot)
-		b2 := must(plotter.MakeHorizBoxPlot(w, y, expon)).(plotter.HorizBoxPlot)
+		b1 := must(plotter.NewBoxPlot(w, y, normal)).(*plotter.BoxPlot)
+		b1.Horizontal = true
+		b2 := must(plotter.NewBoxPlot(w, y, expon)).(*plotter.BoxPlot)
+		b2.Horizontal = true
 		b2.Offset = w + vg.Points(3)
 		p.Add(b0, b1, b2)
 	}
@@ -519,19 +522,22 @@ func Example_horizontalBoxPlots() *plot.Plot {
 	p.X.Label.Text = "plotter.Values"
 
 	// Make boxes for our data and add them to the plot.
-	uniBox := must(plotter.MakeHorizBoxPlot(vg.Points(20), 0, uniform)).(plotter.HorizBoxPlot)
+	uniBox := must(plotter.NewBoxPlot(vg.Points(20), 0, uniform)).(*plotter.BoxPlot)
+	uniBox.Horizontal = true
 	uniLabels, err := uniBox.OutsideLabels(uniform)
 	if err != nil {
 		panic(err)
 	}
 
-	normBox := must(plotter.MakeHorizBoxPlot(vg.Points(20), 1, normal)).(plotter.HorizBoxPlot)
+	normBox := must(plotter.NewBoxPlot(vg.Points(20), 1, normal)).(*plotter.BoxPlot)
+	normBox.Horizontal = true
 	normLabels, err := normBox.OutsideLabels(normal)
 	if err != nil {
 		panic(err)
 	}
 
-	expBox := must(plotter.MakeHorizBoxPlot(vg.Points(20), 2, expon)).(plotter.HorizBoxPlot)
+	expBox := must(plotter.NewBoxPlot(vg.Points(20), 2, expon)).(*plotter.BoxPlot)
+	expBox.Horizontal = true
 	expLabels, err := expBox.OutsideLabels(expon)
 	if err != nil {
 		panic(err)
