@@ -314,6 +314,8 @@ func (o boxPlotOutsideLabels) Label(i int) string {
 
 // horizBoxPlot is like a regular BoxPlot, however,
 // it draws horizontally instead of Vertically.
+// TODO: Merge code for horizontal and vertical box plats as has been done for
+// bar charts.
 type horizBoxPlot struct{ *BoxPlot }
 
 func (b horizBoxPlot) Plot(c draw.Canvas, plt *plot.Plot) {
@@ -416,7 +418,7 @@ func (o horizBoxPlotOutsideLabels) XY(i int) (float64, float64) {
 }
 
 // ValueLabels implements both the Valuer
-// and Labellel interfaces.
+// and Labeller interfaces.
 type ValueLabels []struct {
 	Value float64
 	Label string
