@@ -51,7 +51,7 @@ func ExampleFunction() {
 		handleEx, exampleLog)
 
 	// Output:
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/functions.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/functions.png.
 	// Normally, you would use plot.Save().
 }
 

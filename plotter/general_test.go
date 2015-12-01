@@ -48,7 +48,7 @@ func checkPlot(dir, name, ext string, p *plot.Plot, width, height vg.Length,
 		errf(fmt.Errorf("image mismatch for %s\n", filename))
 		return
 	}
-	lf("Image can be seen at https://github.com/gonum/plot/plotter/%s/%s.%s.\n"+
+	lf("Image can be seen at https://github.com/gonum/plot/tree/master/plotter/%s/%s.%s.\n"+
 		"Normally, you would use plot.Save().\n", dir, name, ext)
 }
 
@@ -123,6 +123,6 @@ func Example() {
 		handleEx, exampleLog)
 
 	// Output:
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/plotLogo.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/plotLogo.png.
 	// Normally, you would use plot.Save().
 }

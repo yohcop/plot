@@ -50,7 +50,7 @@ func ExampleHistogram() {
 		handleEx, exampleLog)
 
 	// Output:
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/histogram.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/histogram.png.
 	// Normally, you would use plot.Save().
 }
 

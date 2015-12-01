@@ -68,9 +68,9 @@ func ExampleQuartPlot() {
 		handleEx, exampleLog)
 
 	// Output:
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/verticalQuartPlot.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/verticalQuartPlot.png.
 	// Normally, you would use plot.Save().
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/horizontalQuartPlot.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/horizontalQuartPlot.png.
 	// Normally, you would use plot.Save().
 }
 

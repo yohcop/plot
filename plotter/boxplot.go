@@ -314,7 +314,7 @@ func (o boxPlotOutsideLabels) Label(i int) string {
 
 // horizBoxPlot is like a regular BoxPlot, however,
 // it draws horizontally instead of Vertically.
-// TODO: Merge code for horizontal and vertical box plats as has been done for
+// TODO: Merge code for horizontal and vertical box plots as has been done for
 // bar charts.
 type horizBoxPlot struct{ *BoxPlot }
 

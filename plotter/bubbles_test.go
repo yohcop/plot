@@ -81,7 +81,7 @@ func ExampleBubbles() {
 		handleEx, exampleLog)
 
 	// Output:
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/bubbles.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/bubbles.png.
 	// Normally, you would use plot.Save().
 }
 

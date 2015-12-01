@@ -40,9 +40,9 @@ func ExampleBarChart() {
 		handleEx, exampleLog)
 
 	// Output:
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/verticalBarChart.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/verticalBarChart.png.
 	// Normally, you would use plot.Save().
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/horizontalBarChart.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/horizontalBarChart.png.
 	// Normally, you would use plot.Save().
 
 }

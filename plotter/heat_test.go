@@ -36,7 +36,7 @@ func ExampleHeatMap() {
 		handleEx, exampleLog)
 
 	// Output:
-	// Image can be seen at https://github.com/gonum/plot/plotter/examplePlots/heatMap.png.
+	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/heatMap.png.
 	// Normally, you would use plot.Save().
 }
 
