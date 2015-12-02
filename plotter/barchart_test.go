@@ -25,6 +25,7 @@ func ExampleBarChart() {
 	handleEx(err)
 	p1.Add(verticalBarChart)
 	p1.NominalX(verticalLabels...)
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "verticalBarChart", "png", p1, 100, 100,
 		handleEx, exampleLog)
 
@@ -36,15 +37,13 @@ func ExampleBarChart() {
 	handleEx(err)
 	p2.Add(horizontalBarChart)
 	p2.NominalY(horizontalLabels...)
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "horizontalBarChart", "png", p2, 100, 100,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/verticalBarChart.png.
-	// Normally, you would use plot.Save().
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/horizontalBarChart.png.
-	// Normally, you would use plot.Save().
-
 }
 
 func TestBarChart(t *testing.T) {

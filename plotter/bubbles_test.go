@@ -45,7 +45,6 @@ func TestBubblesRadius(t *testing.T) {
 }
 
 func ExampleBubbles() {
-
 	// randomTriples returns some random x, y, z triples
 	// with some interesting kind of trend.
 	randomTriples := func(n int) XYZs {
@@ -62,7 +61,7 @@ func ExampleBubbles() {
 		return data
 	}
 
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 10
 	bubbleData := randomTriples(n)
 
@@ -77,16 +76,15 @@ func ExampleBubbles() {
 	bs.Color = color.RGBA{R: 196, B: 128, A: 255}
 	p.Add(bs)
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "bubbles", "png", p, 200, 200,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/bubbles.png.
-	// Normally, you would use plot.Save().
 }
 
 func TestBubbles(t *testing.T) {
-
 	// randomTriples returns some random x, y, z triples
 	// with some interesting kind of trend.
 	randomTriples := func(n int) XYZs {
@@ -103,7 +101,7 @@ func TestBubbles(t *testing.T) {
 		return data
 	}
 
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 10
 	bubbleData := randomTriples(n)
 

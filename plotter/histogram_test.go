@@ -25,7 +25,7 @@ func ExampleHistogram() {
 		return 1.0 / (sigma * root2π) * math.Exp(-((x-mu)*(x-mu))/(2*sigma*sigma))
 	}
 
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 10000
 	vals := make(Values, n)
 	for i := 0; i < n; i++ {
@@ -46,12 +46,12 @@ func ExampleHistogram() {
 	norm.Width = vg.Points(2)
 	p.Add(norm)
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "histogram", "png", p, 200, 200,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/histogram.png.
-	// Normally, you would use plot.Save().
 }
 
 func TestHistogram(t *testing.T) {
@@ -64,7 +64,7 @@ func TestHistogram(t *testing.T) {
 		return 1.0 / (sigma * root2π) * math.Exp(-((x-mu)*(x-mu))/(2*sigma*sigma))
 	}
 
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 10000
 	vals := make(Values, n)
 	for i := 0; i < n; i++ {

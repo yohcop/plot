@@ -21,35 +21,33 @@ var generateTestData = flag.Bool("regen", false, "Uses the current state to rege
 
 // checkPlot checks a generated plot against a previously created reference.
 // If generateTestData = true, it regenerates the reference first.
-func checkPlot(dir, name, ext string, p *plot.Plot, width, height vg.Length,
-	errf errFunc, lf logFunc) {
-
+func checkPlot(dir, name, ext string, p *plot.Plot, width, height vg.Length, handleError errFunc, lf logFunc) {
 	filename := filepath.Join(dir, fmt.Sprintf("%s.%s", name, ext))
 
 	c, err := p.WriterTo(width, height, ext)
-	errf(err)
+	handleError(err)
 
 	var buf bytes.Buffer
 	_, err = c.WriteTo(&buf)
-	errf(err)
+	handleError(err)
 
 	// Recreate Golden images.
 	if *generateTestData {
-		errf(p.Save(width, height, filename))
+		handleError(p.Save(width, height, filename))
 	}
 
 	f, err := os.Open(filename)
-	errf(err)
+	handleError(err)
 
 	want, err := ioutil.ReadAll(f)
-	errf(err)
+	handleError(err)
 	f.Close()
 	if !bytes.Equal(buf.Bytes(), want) {
-		errf(fmt.Errorf("image mismatch for %s\n", filename))
+		handleError(fmt.Errorf("image mismatch for %s\n", filename))
 		return
 	}
-	lf("Image can be seen at https://github.com/gonum/plot/tree/master/plotter/%s/%s.%s.\n"+
-		"Normally, you would use plot.Save().\n", dir, name, ext)
+	lf("Image can be seen at https://github.com/gonum/plot/tree/master/plotter/%s/%s.%s.\n",
+		dir, name, ext)
 }
 
 // errFunc is an interface for functions that deal with errors.
@@ -124,5 +122,4 @@ func Example() {
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/plotLogo.png.
-	// Normally, you would use plot.Save().
 }

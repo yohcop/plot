@@ -13,7 +13,6 @@ import (
 )
 
 func ExampleHeatMap() {
-
 	m := unitGrid{mat64.NewDense(3, 4, []float64{
 		1, 2, 3, 4,
 		5, 6, 7, 8,
@@ -32,16 +31,15 @@ func ExampleHeatMap() {
 	p.X.Max = 3.5
 	p.Y.Max = 2.5
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "heatMap", "png", p, 100, 100,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/heatMap.png.
-	// Normally, you would use plot.Save().
 }
 
 func TestHeatMap(t *testing.T) {
-
 	m := unitGrid{mat64.NewDense(3, 4, []float64{
 		1, 2, 3, 4,
 		5, 6, 7, 8,

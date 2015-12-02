@@ -17,7 +17,7 @@ import (
 // ExampleScatter draws some scatter points, a line,
 // and a line with points.
 func ExampleScatter() {
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 
 	// randomPoints returns some random x, y points
 	// with some interesting kind of trend.
@@ -68,16 +68,16 @@ func ExampleScatter() {
 	p.Legend.Add("line", l)
 	p.Legend.Add("line points", lpLine, lpPoints)
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "scatter", "png", p, 200, 200,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/scatter.png.
-	// Normally, you would use plot.Save().
 }
 
 func TestScatter(t *testing.T) {
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 
 	// randomPoints returns some random x, y points
 	// with some interesting kind of trend.
@@ -132,5 +132,4 @@ func TestScatter(t *testing.T) {
 
 	checkPlot("examplePlots", "scatterTest", "png", p, 200, 200,
 		handleTest(t), testLog(t))
-
 }

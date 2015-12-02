@@ -15,7 +15,6 @@ import (
 
 // ExampleFunction draws some functions.
 func ExampleFunction() {
-
 	quad := NewFunction(func(x float64) float64 { return x * x })
 	quad.Color = color.RGBA{B: 255, A: 255}
 
@@ -47,16 +46,15 @@ func ExampleFunction() {
 	p.Y.Min = 0
 	p.Y.Max = 100
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "functions", "png", p, 200, 200,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/functions.png.
-	// Normally, you would use plot.Save().
 }
 
 func TestFunction(t *testing.T) {
-
 	quad := NewFunction(func(x float64) float64 { return x * x })
 	quad.Color = color.RGBA{B: 255, A: 255}
 

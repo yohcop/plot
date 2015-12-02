@@ -14,7 +14,7 @@ import (
 
 func ExampleQuartPlot() {
 	// Create the example data.
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 100
 	uniform := make(Values, n)
 	normal := make(Values, n)
@@ -45,6 +45,7 @@ func ExampleQuartPlot() {
 	p1.NominalX("Uniform\nDistribution", "Normal\nDistribution",
 		"Exponential\nDistribution")
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "verticalQuartPlot", "png", p1, 200, 200,
 		handleEx, exampleLog)
 
@@ -64,19 +65,18 @@ func ExampleQuartPlot() {
 	p2.NominalY("Uniform\nDistribution", "Normal\nDistribution",
 		"Exponential\nDistribution")
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "horizontalQuartPlot", "png", p2, 200, 200,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/verticalQuartPlot.png.
-	// Normally, you would use plot.Save().
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/horizontalQuartPlot.png.
-	// Normally, you would use plot.Save().
 }
 
 func TestQuartPlot(t *testing.T) {
 	// Create the example data.
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 100
 	uniform := make(Values, n)
 	normal := make(Values, n)
@@ -137,7 +137,7 @@ func TestQuartPlot(t *testing.T) {
 }
 
 func TestGroupedQuartPlots(t *testing.T) {
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 100
 	uniform := make(Values, n)
 	normal := make(Values, n)

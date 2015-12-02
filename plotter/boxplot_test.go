@@ -15,7 +15,7 @@ import (
 
 func ExampleBoxPlot() {
 	// Create the sample data.
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 100
 	uniform := make(ValueLabels, n)
 	normal := make(ValueLabels, n)
@@ -56,6 +56,7 @@ func ExampleBoxPlot() {
 	p1.NominalX("Uniform\nDistribution", "Normal\nDistribution",
 		"Exponential\nDistribution")
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "verticalBoxPlot", "png", p1, 200, 200,
 		handleEx, exampleLog)
 
@@ -83,19 +84,18 @@ func ExampleBoxPlot() {
 	p2.NominalY("Uniform\nDistribution", "Normal\nDistribution",
 		"Exponential\nDistribution")
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "horizontalBoxPlot", "png", p2, 200, 200,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/verticalBoxPlot.png.
-	// Normally, you would use plot.Save().
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/horizontalBoxPlot.png.
-	// Normally, you would use plot.Save().
 }
 
 func TestBoxPlot(t *testing.T) {
 	// Create sample data.
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 100
 	uniform := make(ValueLabels, n)
 	normal := make(ValueLabels, n)
@@ -174,7 +174,7 @@ func TestBoxPlot(t *testing.T) {
 }
 
 func TestGroupedBoxPlots(t *testing.T) {
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 100
 	uniform := make(Values, n)
 	normal := make(Values, n)

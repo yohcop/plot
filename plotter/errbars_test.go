@@ -14,7 +14,6 @@ import (
 
 // ExampleErrors draws points and error bars.
 func ExampleErrors() {
-
 	randomError := func(n int) Errors {
 		err := make(Errors, n)
 		for i := range err {
@@ -44,7 +43,7 @@ func ExampleErrors() {
 		XErrors
 	}
 
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 15
 	data := errPoints{
 		XYs:     randomPoints(n),
@@ -63,12 +62,12 @@ func ExampleErrors() {
 	handleEx(err)
 	p.Add(scatter, xerrs, yerrs)
 
+	// Normally, you would use plot.Save() instead of checkPlot().
 	checkPlot("examplePlots", "errorBars", "png", p, 200, 200,
 		handleEx, exampleLog)
 
 	// Output:
 	// Image can be seen at https://github.com/gonum/plot/tree/master/plotter/examplePlots/errorBars.png.
-	// Normally, you would use plot.Save().
 }
 
 func TestErrors(t *testing.T) {
@@ -101,7 +100,7 @@ func TestErrors(t *testing.T) {
 		XErrors
 	}
 
-	rand.Seed(int64(0))
+	rand.Seed(0) // The default random seed is 1.
 	n := 15
 	data := errPoints{
 		XYs:     randomPoints(n),
